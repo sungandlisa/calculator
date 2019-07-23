@@ -9,17 +9,17 @@
     <body>
         <table border="1">
             <tr>
-                <td colspan="4">
+                <td colspan="5">
                     <input type="text" id="display">
                </td>
             </tr>
             <tr>
-                <td colspan="4">
+                <td colspan="5">
                     <input type="text" id="result">
                 </td>
             </tr>
             <tr>
-                <td colspan="3" onclick="reset()">AC</td>
+                <td colspan="4" onclick="reset()">AC</td>
                 <td onclick="add('/')">/</td>
             </tr>
             <tr>
@@ -27,23 +27,27 @@
                 <td onclick="add('8')">8</td>
                 <td onclick="add('9')">9</td>
                 <td onclick="add('*')">*</td>
+                <td onclick="tan(this.form.display)">tan</td>
             </tr>
             <tr>
                 <td onclick="add('4')">4</td>
                 <td onclick="add('5')">5</td>
                 <td onclick="add('6')">6</td>
                 <td onclick="add('-')">-</td>
+                <td onclick="sin(this.form.display)">sin</td>
             </tr>
             <tr>
                 <td onclick="add('1')">1</td>
                 <td onclick="add('2')">2</td>
                 <td onclick="add('3')">3</td>
                 <td onclick="add('+')">+</td>
+                <td onclick="cos(this.form.display)">cos</td>
             </tr>
             <tr>
                 <td colspan="2"  onclick="add('0')">0</td>
                 <td onclick="add('.')">.</td>
                 <td onclick="calculate()">=</td>
+                <td onclick="pow(this.form.display)">x^y</td>
             </tr>
         </table>
 
@@ -67,8 +71,26 @@
             }
 
 
- 
+            function tan(all) {
+            all.value = Math.tan((all.value * 3.141592) / 180);
+            }
+
+            function sin(all) {
+            all.value = Math.sin((all.value * 3.141592) / 180);
+            }
+
+            function cos(all) {
+            all.value = Math.cos((all.value * 3.141592) / 180);
+            }
             
+            function abs(all) {
+            all.value = Math.abs(all.value);
+            }
+
+            function pow(all){
+            all.value = Math.pow(all.value,2);
+            }
+                    
 
 
 
